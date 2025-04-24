@@ -128,7 +128,7 @@ export default function App() {
                     <input placeholder="Address" value={form.address} onChange={e => handleChange('address', e.target.value)} style={{ width: '100%', margin: '5px 0', borderColor: errors.address ? 'red' : '' }} /><br />
                     {errors.address && <span style={{ color: 'red' }}>{errors.address}</span>}<br />
                     <select value={form.plan} onChange={e => handleChange('plan', e.target.value)} style={{ width: '100%', margin: '10px 0' }}>
-                        <option value="weekly">Weekly ($100/month)</option>
+                        <option value="weekly">Weekly ($60/month)</option>
                         <option value="biweekly">Biweekly ($50/month)</option>
                         <option value="vacation">Vacation Rental ($100/month)</option>
                     </select>
@@ -186,7 +186,7 @@ export default function App() {
                     <p><strong>Email:</strong> {form.email}</p>
                     <p><strong>Phone:</strong> {form.phone}</p>
                     <p><strong>Address:</strong> {form.address}</p>
-                    <p><strong>Service Plan:</strong> {form.plan}</p>
+                    <p><strong>Service Plan:</strong> {form.plan === 'weekly' ? 'Weekly ($60/month)' : form.plan === 'biweekly' ? 'Biweekly ($50/month)' : 'Vacation Rental ($100/month)'}</p>
                     <p><strong>Trash Days:</strong> {form.trashDays.join(', ')}</p>
                     <p><strong>Bins:</strong> {form.bins}</p>
                     <p><strong>Add-ons:</strong> {form.addons.length ? form.addons.join(', ') : 'None'}</p>
