@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "./logo.png";
+import logo from "./genco-logo.png";
 
 export default function App() {
     const [step, setStep] = useState(1);
